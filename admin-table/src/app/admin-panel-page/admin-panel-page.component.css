@@ -10,7 +10,25 @@ table {
     width: 100%;
 }
 .div-table{
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 20px;
     margin-right: 20px;
+}
+.new-client-form{
+    display: flex;
+    flex-direction: row;
+    
+    width: 100%;
+    justify-content: space-around;
+}
+.new-client{
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.new-client-section{
+    margin:20px;
+    margin-bottom: 0px;;
 }

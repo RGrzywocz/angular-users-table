@@ -44,20 +44,6 @@
   "clients": [
     {
       "id": "1",
-      "firstName": "Marek",
-      "lastName": "Nowak",
-      "birthday": "10-12-2022",
-      "industry": "itda"
-    },
-    {
-      "id": "1",
-      "firstName": "Jan",
-      "lastName": "Kowalski",
-      "birthday": "11-12-2022",
-      "industry": "its"
-    },
-    {
-      "id": "1",
       "firstName": "Rafał",
       "lastName": "Grzywocz",
       "birthday": "09-12-2022",
@@ -83,6 +69,20 @@
       "lastName": "Kowalski",
       "birthday": "10-12-2022",
       "industry": "it"
+    },
+    {
+      "firstName": "Michał ",
+      "lastName": "Nowak",
+      "birthday": "1969-07-15T23:00:00.000Z",
+      "industry": "option",
+      "id": "CfzpS1_"
+    },
+    {
+      "firstName": "Jarek",
+      "lastName": "123",
+      "birthday": "1945-11-14T23:00:00.000Z",
+      "industry": "it",
+      "id": "Y9BdzBU"
     }
   ]
 }

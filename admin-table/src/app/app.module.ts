@@ -16,6 +16,10 @@ import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatTableModule } from '@angular/material/table'
 import { MatSortModule } from '@angular/material/sort'
+import { MatIconModule } from '@angular/material/icon'
+import { MatSelectModule } from '@angular/material/select'
+import { MatDatepickerModule } from '@angular/material/datepicker'
+import { MatNativeDateModule } from '@angular/material/core';
 import { tokenInterceptor } from './interceptors/token-interceptor.service';
 
 @NgModule({
@@ -38,7 +42,11 @@ import { tokenInterceptor } from './interceptors/token-interceptor.service';
     MatToolbarModule,
     MatPaginatorModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatIconModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
     
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: tokenInterceptor, multi: true }],

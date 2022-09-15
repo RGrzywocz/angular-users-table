@@ -27,4 +27,13 @@ export class DatabaseService {
   deleteClient(clientId: number){
     return this.http.delete<any>(this.baseUrl + "/clients/" + clientId);
   }
+
+  addClient(firstName:string, lastName:string, birthday:string, industry:string){
+    return this.http.post<any>(this.baseUrl + "/clients", {
+      firstName:firstName,
+      lastName:lastName,
+      birthday:birthday,
+      industry:industry
+    });
+  }
 }

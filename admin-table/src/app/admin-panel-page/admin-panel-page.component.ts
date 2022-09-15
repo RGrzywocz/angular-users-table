@@ -1,10 +1,11 @@
 
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort, Sort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table'
 import { Client } from '../models/Client';
 import { DatabaseService } from '../services/database.service';
 import { UserService } from '../services/user.service';
@@ -18,6 +19,14 @@ export class AdminPanelPageComponent implements AfterViewInit {
   displayedColumns: string[] = ['firstName', 'lastName', 'birthday', 'industry', 'deletion'];
   clients!: MatTableDataSource<Client>; 
   userEmail: string = ""
+  industries: string[] = ["bio", "it", "archi"];
+  showAddingNewClient = false;
+  newClientForm: FormGroup = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    birthday: new FormControl<Date>(new Date()),
+    industry: new FormControl('')
+  });
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -68,7 +77,60 @@ export class AdminPanelPageComponent implements AfterViewInit {
         complete: ()=> this.updateClientTable()
       }
       )
+    }   
+  }
+
+  editClient(element:Client){
+  }
+
+  openAddingFields(){
+    this.showAddingNewClient = true;
+  }
+  onAddNewClientClick(){
+
+    //checking data
+    if(this.newClientForm.value.firstName == ""){
+      this._snackBar.open("First name cannot be empty ", '', {
+        duration: 1200
+      });
+      return;
     }
-    
+    if(this.newClientForm.value.lastName == ""){
+      this._snackBar.open("Last name cannot be empty ", '', {
+        duration: 1200
+      });
+      return;
+    }
+    var datesDiff = new Date().getTime() - this.newClientForm.value.birthday.getTime();
+    datesDiff /= (60 * 60 * 24);
+  
+    if(new Date().getFullYear() - this.newClientForm.value.birthday.getFullYear()< 18)
+    {
+      this._snackBar.open("Client must be atleast 18 years old ", '', {
+        duration: 1200
+      });
+      return;
+    }
+
+    this.db.addClient(this.newClientForm.value.firstName, 
+                      this.newClientForm.value.lastName, 
+                      this.newClientForm.value.birthday,
+                      this.newClientForm.value.industry)
+                      .subscribe({
+                        next: (reponse) => this
+                        ._snackBar.open("Client has been added " + this.newClientForm.value.firstName + " " + this.newClientForm.value.lastName, '', {
+                          duration: 1200
+                        }),
+                        error: (error) => alert(error),
+                        complete: ()=> {
+                          this.showAddingNewClient = false;
+                          this.updateClientTable();
+                        }
+                      })
+  }
+
+  onDissmisNewClientClick(){
+    this.newClientForm.reset();
+    this.showAddingNewClient = false;
   }
 }
