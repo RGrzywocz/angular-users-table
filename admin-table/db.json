@@ -1,18 +1,85 @@
 {
   "users": [
-    
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$YkACJ3V9DJ72XvyPkEddu.dXOXb11H0v2pDbE7911CBPrvRuPSlue",
+      "id": 1
+    },
+    {
+      "email": "admin2@gmail.com",
+      "password": "$2a$10$5HXw7vmKTec.4Xry0Hv8Ve.5vLE7RDoJ7WSczqQWZBA9bnvusmx7a",
+      "id": 2
+    },
+    {
+      "email": "grzywoczrafal@gmail.com",
+      "password": "$2a$10$FBykaQ9czW1MI.pbmIitpOAIUc74Q35nGWxVUC59UaXzmDMLjixLu",
+      "id": 3
+    },
+    {
+      "email": "123123@gmail.com",
+      "password": "$2a$10$FiVOEFp2ijzCFipaIJlmueMXYN3XVXPycIR25CSI/OMISX8YHqq0q",
+      "id": 4
+    },
+    {
+      "email": "123213@gmail.com",
+      "password": "$2a$10$xl.sar./eG8Q9PUNdIavR.A5lWicEGle6nQ1n6N82TjA9bKFSvTWS",
+      "id": 5
+    },
+    {
+      "email": "grzywoczr2afal@gmail.com",
+      "password": "$2a$10$cebtZnc/1R/MGFtZ6xd9aOxF9FwQhs7Le..QooKaOb0N9NfzEAn8G",
+      "id": 6
+    },
+    {
+      "email": "test@test.com",
+      "password": "$2a$10$JnGk3PKTl50VqCiy1goIguQGRaW5TymLLlWV5jGiX.yusY1JzlNmO",
+      "id": 7
+    },
+    {
+      "email": "adsasd@gmail.com",
+      "password": "$2a$10$UZVdkbHp/DMaYDR.GfoLlOCq.NpoVj0X9fIotpv8uSWyNYIiMvd22",
+      "id": 8
+    }
   ],
   "clients": [
     {
       "id": "1",
+      "firstName": "Marek",
+      "lastName": "Nowak",
+      "birthday": "10-12-2022",
+      "industry": "itda"
+    },
+    {
+      "id": "1",
       "firstName": "Jan",
+      "lastName": "Kowalski",
+      "birthday": "11-12-2022",
+      "industry": "its"
+    },
+    {
+      "id": "1",
+      "firstName": "Rafał",
+      "lastName": "Grzywocz",
+      "birthday": "09-12-2022",
+      "industry": "it2"
+    },
+    {
+      "id": "4",
+      "firstName": "Michał",
       "lastName": "Kowalski",
       "birthday": "10-12-2022",
       "industry": "it"
     },
     {
       "id": "1",
-      "firstName": "Jan",
+      "firstName": "Ola",
+      "lastName": "Kowalski",
+      "birthday": "10-12-2022",
+      "industry": "it"
+    },
+    {
+      "id": "1",
+      "firstName": "Ania",
       "lastName": "Kowalski",
       "birthday": "10-12-2022",
       "industry": "it"

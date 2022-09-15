@@ -16,7 +16,15 @@ export class DatabaseService {
     return this.http.post<string>(this.baseUrl + "/register", {"email": email, "password": password});
   }
 
-  loginAndGetToken(email: string, password: string): Observable<string>{
-    return this.http.post<string>(this.baseUrl + "/login", {"email": email, "password": password})
+  loginAndGetToken(email: string, password: string){
+    return this.http.post<any>(this.baseUrl + "/login", {"email": email, "password": password})
+  }
+
+  getAllClients(){
+    return this.http.get<Client[]>(this.baseUrl + "/clients");
+  }
+
+  deleteClient(clientId: number){
+    //return this.http.delete<Client>(tjos)
   }
 }

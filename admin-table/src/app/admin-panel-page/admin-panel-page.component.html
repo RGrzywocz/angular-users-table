@@ -1,4 +1,41 @@
-<p>admin-panel-page works!</p>
-<div *ngFor="let user of users">
-    {{user.firstName}}
-</div>
+<mat-toolbar class="toolbar">
+    <span>Hi {{userEmail}}</span>
+    <button (click)="onLogoutClick()" mat-raised-button color="primary">Log out</button>
+</mat-toolbar>
+
+<div class="mat-elevation-z8 div-table">
+    <table mat-table [dataSource]="clients" matSort (matSortChange)="announceSortChange($event)">
+  
+      <!-- first name Column -->
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by first name"> First name </th>
+        <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+      </ng-container>
+  
+      <!-- last name Column -->
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by last name"> Last Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+      </ng-container>
+  
+      <!-- birthday Column -->
+      <ng-container matColumnDef="birthday">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by birthday"> Birthday </th>
+        <td mat-cell *matCellDef="let element"> {{element.birthday}} </td>
+      </ng-container>
+  
+      <!-- industry Column -->
+      <ng-container matColumnDef="industry">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by indsutry"> Industry </th>
+        <td mat-cell *matCellDef="let element"> {{element.industry}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons 
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>

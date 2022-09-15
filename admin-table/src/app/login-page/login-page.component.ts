@@ -30,8 +30,9 @@ export class LoginPageComponent {
       .subscribe({
         next: (response) => {
           this.user.userToken = response;
+          
           this.user.isUserLoggedIn = true;
-          this.user.userLogin = this.loginForm.value.email;
+          this.user.userEmail = this.loginForm.value.email;
           this.router.navigate(['']);
           this._snackBar.open('Register succes', '', {
             duration: 1200
@@ -50,9 +51,9 @@ export class LoginPageComponent {
                                this.loginForm.value.password)
       .subscribe({
         next: (response) => {
-          this.user.userToken = response;
+          this.user.userToken = response.accessToken;
           this.user.isUserLoggedIn = true;
-          this.user.userLogin = this.loginForm.value.email;
+          this.user.userEmail = this.loginForm.value.email;
           this.router.navigate([''])
           this._snackBar.open('Login succes', '', {
           duration: 1200

@@ -1,7 +1,7 @@
 <mat-card>
     <mat-card-title>Login page</mat-card-title>
 <mat-card-content>
-<form [formGroup]="loginForm" (ngSubmit)="onLoginClick()">
+<form [formGroup]="loginForm" onkeydown="return event.key != 'Enter';">
   <p>
     <mat-form-field>
       <input type="text" matInput placeholder="E-mail" formControlName="email">
@@ -22,7 +22,7 @@
         <button (click)="onRegisterClick()"  mat-raised-button color="accent">Register</button>
     </div>
     <div class="button-login">
-        <button type="submit" mat-raised-button color="primary">Login</button>
+        <button (click)="onLoginClick()" mat-raised-button color="primary">Login</button>
     </div>
   </div>
 

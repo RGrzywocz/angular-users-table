@@ -1,0 +1,16 @@
+:host{
+    background-color: lightgray;
+}
+.toolbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+table {
+    width: 100%;
+}
+.div-table{
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
