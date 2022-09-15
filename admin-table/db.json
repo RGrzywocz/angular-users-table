@@ -43,46 +43,32 @@
   ],
   "clients": [
     {
-      "id": "1",
-      "firstName": "Rafał",
-      "lastName": "Grzywocz",
-      "birthday": "09-12-2022",
-      "industry": "it2"
-    },
-    {
-      "id": "4",
-      "firstName": "Michał",
-      "lastName": "Kowalski",
-      "birthday": "10-12-2022",
-      "industry": "it"
-    },
-    {
-      "id": "1",
-      "firstName": "Ola",
-      "lastName": "Kowalski",
-      "birthday": "10-12-2022",
-      "industry": "it"
-    },
-    {
-      "id": "1",
-      "firstName": "Ania",
-      "lastName": "Kowalski",
-      "birthday": "10-12-2022",
-      "industry": "it"
-    },
-    {
-      "firstName": "Michał ",
+      "firstName": "Rafał ",
       "lastName": "Nowak",
-      "birthday": "1969-07-15T23:00:00.000Z",
-      "industry": "option",
-      "id": "CfzpS1_"
+      "birthday": "1969-02-03T23:00:00.000Z",
+      "industry": "Finances",
+      "id": 1
     },
     {
-      "firstName": "Jarek",
-      "lastName": "123",
-      "birthday": "1945-11-14T23:00:00.000Z",
-      "industry": "it",
-      "id": "Y9BdzBU"
+      "firstName": "Marek",
+      "lastName": "Kowalski",
+      "birthday": "1969-02-11T23:00:00.000Z",
+      "industry": "Journeys",
+      "id": 2
+    },
+    {
+      "firstName": "Michał",
+      "lastName": "Janusz",
+      "birthday": "1998-03-04T23:00:00.000Z",
+      "industry": "Media",
+      "id": 3
+    },
+    {
+      "firstName": "Ania",
+      "lastName": "Kamińska",
+      "birthday": "1997-02-04T23:00:00.000Z",
+      "industry": "Finances",
+      "id": 4
     }
   ]
 }

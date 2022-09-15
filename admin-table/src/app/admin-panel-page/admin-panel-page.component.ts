@@ -19,7 +19,7 @@ export class AdminPanelPageComponent implements AfterViewInit {
   displayedColumns: string[] = ['firstName', 'lastName', 'birthday', 'industry', 'deletion'];
   clients!: MatTableDataSource<Client>; 
   userEmail: string = ""
-  industries: string[] = ["bio", "it", "archi"];
+  industries: string[] = ["Finances", "Media", "Journeys"];
   showAddingNewClient = false;
   newClientForm: FormGroup = new FormGroup({
     firstName: new FormControl(''),
