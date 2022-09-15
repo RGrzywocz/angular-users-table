@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Client } from '../models/Client';
+import { DatabaseService } from '../services/database.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-admin-panel-page',
@@ -6,10 +10,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-panel-page.component.css']
 })
 export class AdminPanelPageComponent implements OnInit {
+  users: Client[] = [];
+  
+  
 
-  constructor() { }
+  constructor() {
+    
+   }
 
   ngOnInit(): void {
+    
   }
 
+  
 }

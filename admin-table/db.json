@@ -1,0 +1,21 @@
+{
+  "users": [
+    
+  ],
+  "clients": [
+    {
+      "id": "1",
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "birthday": "10-12-2022",
+      "industry": "it"
+    },
+    {
+      "id": "1",
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "birthday": "10-12-2022",
+      "industry": "it"
+    }
+  ]
+}
