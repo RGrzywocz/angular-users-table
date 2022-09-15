@@ -25,6 +25,6 @@ export class DatabaseService {
   }
 
   deleteClient(clientId: number){
-    //return this.http.delete<Client>(tjos)
+    return this.http.delete<any>(this.baseUrl + "/clients/" + clientId);
   }
 }
