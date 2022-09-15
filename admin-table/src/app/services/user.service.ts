@@ -6,9 +6,24 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class UserService {
-  userToken: any = "";
-  userEmail: string = "";
-  isUserLoggedIn: boolean = false;
+  public get userToken(){
+    return localStorage.getItem("userToken");
+  }
+  public set userToken(value: any){
+    localStorage.setItem("userToken", value);
+  }
+  public get userEmail(){
+    return localStorage.getItem("userEmail");
+  }
+  public set userEmail(value: any){
+    localStorage.setItem("userEmail", value);
+  }
+  public get isUserLoggedIn(){
+    return localStorage.getItem("isUserLoggedIn");
+  }
+  public set isUserLoggedIn(value: any){
+    localStorage.setItem("isUserLoggedIn", value);
+  }
   
   constructor(private _snackBar: MatSnackBar, private router: Router) { }
 
