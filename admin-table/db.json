@@ -43,16 +43,16 @@
   ],
   "clients": [
     {
-      "firstName": "Rafał ",
-      "lastName": "Nowak",
+      "firstName": "Rafałkk2asda",
+      "lastName": "Nowaks",
       "birthday": "1969-02-03T23:00:00.000Z",
       "industry": "Finances",
       "id": 1
     },
     {
       "firstName": "Marek",
-      "lastName": "Kowalski",
-      "birthday": "1969-02-11T23:00:00.000Z",
+      "lastName": "Kowalskieee",
+      "birthday": "1969-03-11T23:00:00.000Z",
       "industry": "Journeys",
       "id": 2
     },
@@ -69,6 +69,13 @@
       "birthday": "1997-02-04T23:00:00.000Z",
       "industry": "Finances",
       "id": 4
+    },
+    {
+      "firstName": "Rafałfasf",
+      "lastName": "grz",
+      "birthday": "1990-09-15T22:00:00.000Z",
+      "industry": "Journeys",
+      "id": 6
     }
   ]
 }

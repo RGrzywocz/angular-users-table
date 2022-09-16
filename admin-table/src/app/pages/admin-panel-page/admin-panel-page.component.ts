@@ -45,6 +45,10 @@ export class AdminPanelPageComponent {
     this.updateClientTable();
    }
 
+  onLogoutClick(){
+    this.user.logout();
+  }
+
   updateClientTable(){
     this.db.getAllClients().subscribe({
       next: (response) => {
@@ -55,11 +59,7 @@ export class AdminPanelPageComponent {
     })
   }
 
-   onLogoutClick(){
-    this.user.logout();
-   }
-
-  removeClient(element:Client){
+  onRemoveClientClick(element:Client){
     if(confirm("Are You sure, You want to delete " + element.firstName + " from database?")){
       this.db.deleteClient(element.id).subscribe({
         next: (response) => {
@@ -74,8 +74,7 @@ export class AdminPanelPageComponent {
     }   
   }
 
-  editClient(element:Client){
-    console.log(element.id);
+  onEditClientClick(element:Client){
     this.showEditingClient = true;
     this.storeEditingId = element.id; 
     this.editClientForm.setValue({
@@ -87,20 +86,21 @@ export class AdminPanelPageComponent {
    
   }
 
-  openAddingFields(){
+  openAddingClientFields(){
     this.showAddingNewClient = true;
   }
-  onAddNewClientClick(){
+
+  onAddNewClientConfirmClick(){
     //checking data
     if(this.newClientForm.value.firstName == ""){
       this._snackBar.open("First name cannot be empty ", '', {
-        duration: 1200
+        duration: 2000
       });
       return;
     }
     if(this.newClientForm.value.lastName == ""){
       this._snackBar.open("Last name cannot be empty ", '', {
-        duration: 1200
+        duration: 2000
       });
       return;
     }
@@ -110,13 +110,13 @@ export class AdminPanelPageComponent {
     if(new Date().getFullYear() - this.newClientForm.value.birthday.getFullYear()< 18)
     {
       this._snackBar.open("Client must be atleast 18 years old ", '', {
-        duration: 1200
+        duration: 2000
       });
       return;
     }
     if(this.newClientForm.value.industry == ""){
       this._snackBar.open("Industry must be chosen", '', {
-        duration: 1200
+        duration: 2000
       });
       return;
     }
@@ -143,17 +143,16 @@ export class AdminPanelPageComponent {
     this.showAddingNewClient = false;
   }
 
-  onEditClientClick(){
-    console.log(this.storeEditingId);
+  onEditClientConfirmClick(){
     if(this.editClientForm.value.firstName == ""){
       this._snackBar.open("First name cannot be empty ", '', {
-        duration: 1200
+        duration: 2000
       });
       return;
     }
     if(this.editClientForm.value.lastName == ""){
       this._snackBar.open("Last name cannot be empty ", '', {
-        duration: 1200
+        duration: 2000
       });
       return;
     }
@@ -163,13 +162,13 @@ export class AdminPanelPageComponent {
     if(new Date().getFullYear() - this.editClientForm.value.birthday.getFullYear()< 18)
     {
       this._snackBar.open("Client must be atleast 18 years old ", '', {
-        duration: 1200
+        duration: 2000
       });
       return;
     }
     if(this.editClientForm.value.industry == ""){
       this._snackBar.open("Industry must be chosen", '', {
-        duration: 1200
+        duration: 2000
       });
       return;
     }
@@ -181,8 +180,8 @@ export class AdminPanelPageComponent {
                       this.editClientForm.value.industry)
                       .subscribe({
                         next: (reponse) => {
-                          this._snackBar.open("Client has been added " + this.newClientForm.value.firstName + " " + this.newClientForm.value.lastName, '', {
-                          duration: 1200
+                          this._snackBar.open("Client has been edited " + this.editClientForm.value.firstName + " " + this.editClientForm.value.lastName, '', {
+                          duration: 2000
                         });
                         console.log(reponse);
                       },
