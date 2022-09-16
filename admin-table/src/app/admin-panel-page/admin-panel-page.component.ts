@@ -1,10 +1,8 @@
-
-import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatSort, Sort } from '@angular/material/sort';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table'
 import { Client } from '../models/Client';
 import { DatabaseService } from '../services/database.service';
@@ -15,12 +13,13 @@ import { UserService } from '../services/user.service';
   templateUrl: './admin-panel-page.component.html',
   styleUrls: ['./admin-panel-page.component.css']
 })
-export class AdminPanelPageComponent implements AfterViewInit {
+export class AdminPanelPageComponent {
   displayedColumns: string[] = ['firstName', 'lastName', 'birthday', 'industry', 'deletion'];
   clients!: MatTableDataSource<Client>; 
   userEmail: string = ""
   industries: string[] = ["Finances", "Media", "Journeys"];
   showAddingNewClient = false;
+
   newClientForm: FormGroup = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
@@ -30,15 +29,9 @@ export class AdminPanelPageComponent implements AfterViewInit {
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  
-  ngAfterViewInit() {
-    
-  }
 
-  constructor(private user: UserService, 
-              private db: DatabaseService, 
-              private _liveAnnouncer: LiveAnnouncer,
-              private _snackBar: MatSnackBar) {
+
+  constructor(private user: UserService, private db: DatabaseService, private _snackBar: MatSnackBar) {
     this.userEmail = this.user.userEmail;
     this.updateClientTable();
    }
@@ -57,14 +50,6 @@ export class AdminPanelPageComponent implements AfterViewInit {
     this.user.logout();
    }
 
-   announceSortChange(sortState: Sort) {
-    if (sortState.direction) {
-      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
-    } else {
-      this._liveAnnouncer.announce('Sorting cleared');
-    }
-  }
-
   removeClient(element:Client){
     if(confirm("Are You sure, You want to delete " + element.firstName + " from database?")){
       this.db.deleteClient(element.id).subscribe({
@@ -81,13 +66,13 @@ export class AdminPanelPageComponent implements AfterViewInit {
   }
 
   editClient(element:Client){
+    //todo
   }
 
   openAddingFields(){
     this.showAddingNewClient = true;
   }
   onAddNewClientClick(){
-
     //checking data
     if(this.newClientForm.value.firstName == ""){
       this._snackBar.open("First name cannot be empty ", '', {

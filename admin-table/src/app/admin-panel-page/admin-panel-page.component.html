@@ -51,7 +51,7 @@
 </div>
 
 <div class="mat-elevation-z8 div-table">
-    <table mat-table [dataSource]="clients" matSort (matSortChange)="announceSortChange($event)">
+    <table mat-table [dataSource]="clients" matSort>
   
       <!-- first name Column -->
       <ng-container matColumnDef="firstName">
@@ -78,6 +78,8 @@
         <td mat-cell *matCellDef="let element"> {{element.industry}} </td>
       </ng-container>
 
+
+      <!-- deletion/edit Column -->    
       <ng-container matColumnDef="deletion">
         <th mat-header-cell *matHeaderCellDef> Actions </th>
         <td mat-cell *matCellDef="let element" class="action-link"> 
@@ -99,4 +101,4 @@
                    showFirstLastButtons 
                    aria-label="Select page of periodic elements">
     </mat-paginator>
-  </div>
+</div>
