@@ -50,6 +50,54 @@
   </div>
 </div>
 
+<div class="edit-client-section">
+  
+  <div *ngIf="showEditingClient" class="edit-client">
+    <form class="edit-client-form" [formGroup]="editClientForm" onkeydown="return event.key != 'Enter';">
+      <p>
+        <mat-form-field>
+          <input type="text" matInput placeholder="First name" formControlName="firstName">
+        </mat-form-field>
+      </p>
+    
+      <p>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Last name" formControlName="lastName">
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Choose a birthday</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="birthday">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        
+      </p>
+    
+      <p>
+        <mat-form-field>
+          <mat-select  placeholder="industry" formControlName="industry">
+            <mat-option *ngFor="let option of industries" value="{{option}}">{{option}}</mat-option>
+          </mat-select>  
+        </mat-form-field>
+      </p>
+  
+      <div class="buttons">
+        <div class="button-edit">
+            <button (click)="onEditClientClick()" mat-raised-button color="primary">Edit client</button>
+        </div>
+        <div class="button-cancel">
+          <button (click)="onDissmisEditClientClick()" mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
+        </div>
+      </div>
+    
+    </form>
+  </div>
+</div>
+
 <div class="mat-elevation-z8 div-table">
     <table mat-table [dataSource]="clients" matSort>
   

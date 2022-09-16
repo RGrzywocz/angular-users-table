@@ -20,6 +20,16 @@ table {
     margin:20px;
     margin-bottom: 0px;;
 }
+.edit-client-form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+.edit-client-section{
+    margin:20px;
+    margin-bottom: 0px;;
+}
 .buttons{
     display: flex;
     justify-content: space-around;

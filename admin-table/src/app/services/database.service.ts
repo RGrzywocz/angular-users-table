@@ -36,4 +36,13 @@ export class DatabaseService {
       industry:industry
     });
   }
+
+  editClient(clientId:number, firstName:string, lastName:string, birthday:string, industry:string){
+    return this.http.put<any>(this.baseUrl + "/clients/" + clientId, {
+      firstName:firstName,
+      lastName:lastName,
+      birthday:birthday,
+      industry:industry
+    });
+  }
 }
